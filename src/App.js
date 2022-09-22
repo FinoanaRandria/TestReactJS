@@ -21,9 +21,13 @@ import Footer from './components/Footer';
 
      changeViaBind=(param)=>{
          this.setState({
-          titre:param
+          titre: param
          })
      }
+
+      viainput =(e)=>{/* e capture l'evenement de l'element */
+        this.setState({titre: e.target.value})
+      }
      render(){
                    
           return (
@@ -35,10 +39,13 @@ import Footer from './components/Footer';
                     <br></br>
                     <br></br>
                 <button onClick={ ()=>this.changeTitleViaPara('Je suis le titre en para')} style={{backgroundColor:"pink",border:"none",padding:"10px",borderRadius:"50px",color:"white"}}>changer le Nom via Para  </button>
-                 
+                      <br></br>
+                      <br></br>
+                 <button style={{backgroundColor:"violet",border:"none",padding:"10px",borderRadius:"50px",color:"white"}} onClick={this.changeViaBind.bind(this,"Le mouveau titre bind")} > Changer Via Bind</button>
+                     <input type="text" onChange={this.viainput} value={this.state.titre}></input>
                   <Footer></Footer>
               </div>
-            );
+            ); 
 
 
      }
