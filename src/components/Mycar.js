@@ -1,4 +1,4 @@
-import React, { Children, Component } from "react";
+import React, { Children, Component,Fragment} from "react";
 import Car from "./Cars";
 import Footer from "./Footer";
 class Mycar extends Component {
@@ -35,7 +35,7 @@ class Mycar extends Component {
   render() {
       const date = new Date().getFullYear();
     return (
-      <div>   {/* azo atao tsara no mifampy passe zavtr @ react via props xd */}
+      <Fragment>   {/* azo atao tsara no mifampy passe zavtr @ react via props xd */}
         <h1>{this.props.titre}</h1>
         {/* onMouseOver={this.addStyle} */}
         <p onCopy={this.noCopy}>
@@ -47,17 +47,25 @@ class Mycar extends Component {
         {/* peuvent encore contenir des elements enfants */}
        
         <button onClick={this.ajout10}>+10</button>
-              { this.state.voiture.map((voiture,index)=>{
+        <table className="hey">
+              <tr>
+                  <th>Marque</th>
+                  <th>Couleur</th>
+                  <th>Age</th>
+              </tr>
+          { this.state.voiture.map((voiture,index)=>{
                   return(
-                    <div key={index}>
+                    <Fragment key={index}> 
                           <Car nom={voiture.nom}  color={voiture.color} date={voiture.date + " ans"} />
 
-                    </div>
+                    </Fragment>
                       //key premet  a react  d'identifier un element comme un id????:) 
                     
                   )
               })}
-      </div>
+        </table>
+              
+      </Fragment>
     );
   }
 }

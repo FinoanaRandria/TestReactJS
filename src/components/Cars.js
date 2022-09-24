@@ -13,12 +13,12 @@ const Car = (props) => {
    }
    if (props.nom != null) {
       return (/* jsx a besoin d'un element parent izay mahatonga any le div eo */
-         <div style={style.wrapper}>
-            <p>Marque:{props.nom}</p>
-            {CondColor}
+         <tr style={style.wrapper}>
+           <td> <p>Marque:{props.nom}</p> </td> 
+           <td>{CondColor}</td> 
             {/* {}permet d'introduire du code js dans du jsx */}
-            <p>Date de sortie:{props.date}</p>
-         </div>
+           <td> <p>Date de sortie:{props.date}</p></td> 
+         </tr>
             
       )
    } else {
