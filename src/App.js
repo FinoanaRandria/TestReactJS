@@ -28,12 +28,13 @@ import Footer from './components/Footer';
       viainput =(e)=>{/* e capture l'evenement de l'element */
         this.setState({titre: e.target.value})
       }
+
      render(){
                    
           return (
 
               <div className="App">
-                  <Mycar title={this.state.titre}> </Mycar>{/* appeler le composant */}
+                  <Mycar titre={this.state.titre}> </Mycar>{/* appeler le composant */}
                     {/* pour envoyer l'element du state dans le props de Mycar */}
                 <button onClick={ this.changeTitle} style={{backgroundColor:"skyblue",border:"none",padding:"10px",borderRadius:"50px",color:"white"}}>changer le Nom</button>
                     <br></br>

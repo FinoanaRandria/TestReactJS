@@ -3,7 +3,7 @@ import React from "react";
 const Car = (props) => {
    /* props premet de recuperer les composants de lasa objects */
 
-   const CondColor = props.Color ? (<p >Couleur:{props.Color}</p>) : (<p>Couleur:Aucun</p>)
+   const CondColor = props.color ? (<p style={{backgroundColor: "pink"}} >Couleur:{props.color}</p>) : (<p>Couleur:Aucun</p>)
    const style = {
       wrapper : { 
          backgroundColor: "#00FFFF"
@@ -11,10 +11,10 @@ const Car = (props) => {
           margin: "5px auto", 
           padding: "10px" }
    }
-   if (props.children != null) {
+   if (props.nom != null) {
       return (/* jsx a besoin d'un element parent izay mahatonga any le div eo */
          <div style={style.wrapper}>
-            <p>Marque:{props.children}</p>
+            <p>Marque:{props.nom}</p>
             {CondColor}
             {/* {}permet d'introduire du code js dans du jsx */}
             <p>Date de sortie:{props.date}</p>
