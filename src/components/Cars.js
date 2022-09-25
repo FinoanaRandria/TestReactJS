@@ -11,6 +11,13 @@ const Car = (props) => {
           margin: "5px auto", 
           padding: "10px" }
    }
+
+     let nomUti={
+      ut1:"finoana",
+      ut2:"Eiji"
+     }
+       let {ut1,ut2}= nomUti;
+          console.log(ut1,ut2);
    if (props.nom != null) {
       return (/* jsx a besoin d'un element parent izay mahatonga any le div eo */
          <tr style={style.wrapper}>
